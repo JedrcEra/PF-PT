@@ -34,9 +34,6 @@ public class LoginFrame extends JFrame {
         buttons.add(login); buttons.add(register);
         g.gridx = 0; g.gridy = 4; g.gridwidth = 2; root.add(buttons, g);
 
-        JLabel hint = new JLabel("Default staff login:  S001 / admin123", SwingConstants.CENTER);
-        hint.setForeground(Color.GRAY);
-        g.gridy = 5; root.add(hint, g);
 
         login.addActionListener(e -> doLogin());
         pwField.addActionListener(e -> doLogin());
