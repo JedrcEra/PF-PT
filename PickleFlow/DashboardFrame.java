@@ -1,11 +1,11 @@
-import javax.swing.*;
 import java.awt.*;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.*;
 
-/** Main window. Staff and Players share the same code but see different tabs (POLYMORPHISM via Person). */
+
 public class DashboardFrame extends JFrame {
     private final Store store;
     private final Person user;
@@ -44,7 +44,6 @@ public class DashboardFrame extends JFrame {
         refreshAll();
     }
 
-    // ---------- helpers ----------
     private void refreshAll() { for (Runnable r : refreshers) r.run(); }
 
     private void act(Runnable r) {
@@ -106,7 +105,6 @@ public class DashboardFrame extends JFrame {
         return sb.length() == 0 ? "Fully booked" : sb.toString();
     }
 
-    // ---------- COURTS (courts.txt) ----------
     private JPanel courtsTab() {
         JPanel root = tabRoot();
         JTextField dateF = new JTextField(LocalDate.now().toString(), 10);
@@ -161,7 +159,6 @@ public class DashboardFrame extends JFrame {
         return root;
     }
 
-    // ---------- BOOKINGS (bookings.txt) ----------
     private JPanel bookingsTab() {
         JPanel root = tabRoot();
         TablePanel tp = new TablePanel("Booking", "Player", "Court", "Date", "Time", "Total (PHP)", "Status");
@@ -246,7 +243,6 @@ public class DashboardFrame extends JFrame {
         return root;
     }
 
-    // ---------- MEMBERSHIPS (memberships.txt) ----------
     private JPanel membershipTab() {
         JPanel root = tabRoot();
         if (isStaff) {
@@ -309,7 +305,6 @@ public class DashboardFrame extends JFrame {
         return root;
     }
 
-    // ---------- PAYMENTS (payments.txt) ----------
     private JPanel paymentsTab() {
         JPanel root = tabRoot();
         TablePanel tp = new TablePanel("Payment", "Player", "For", "Amount (PHP)", "Status", "Date");
@@ -371,7 +366,6 @@ public class DashboardFrame extends JFrame {
         return root;
     }
 
-    // ---------- PLAYERS (players.txt, staff view) ----------
     private JPanel playersTab() {
         JPanel root = tabRoot();
         TablePanel tp = new TablePanel("ID", "Name", "Contact", "Membership", "Active bookings");
@@ -393,8 +387,6 @@ public class DashboardFrame extends JFrame {
         })), BorderLayout.SOUTH);
         return root;
     }
-
-    // ---------- PROFILE (players.txt / staff.txt) ----------
     private JPanel profileTab() {
         JPanel root = tabRoot();
         JTextField name = new JTextField(user.getFullName(), 20);

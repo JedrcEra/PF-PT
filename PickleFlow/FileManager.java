@@ -4,7 +4,7 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.function.Function;
 
-/** ENCAPSULATION: the only class that touches the .txt files. */
+
 public class FileManager {
     private final Path dir;
 
@@ -13,7 +13,6 @@ public class FileManager {
         try { Files.createDirectories(dir); } catch (IOException e) { throw new UncheckedIOException(e); }
     }
 
-    /** Trims input and removes the '|' field separator so records are never corrupted. */
     public static String clean(String v, String label) {
         if (v == null || v.trim().isEmpty()) throw new IllegalArgumentException(label + " is required.");
         return v.trim().replace("|", "/");

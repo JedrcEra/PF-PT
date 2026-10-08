@@ -1,9 +1,9 @@
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.BorderLayout;
 import java.util.List;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
-/** Reusable read-only table used by every tab. */
+
 public class TablePanel extends JPanel {
     private final DefaultTableModel model;
     private final JTable table;
@@ -25,7 +25,7 @@ public class TablePanel extends JPanel {
         for (Object[] r : rows) model.addRow(r);
     }
 
-    /** First column of the selected row (the record ID), or null after warning the user. */
+ 
     public String selectedId() {
         int r = table.getSelectedRow();
         if (r < 0) {

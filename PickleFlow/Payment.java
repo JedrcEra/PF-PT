@@ -4,7 +4,7 @@ public class Payment {
     public static final String PENDING = "Pending", CONFIRMED = "Confirmed", REFUNDED = "Refunded";
     private String paymentId;
     private String playerId;
-    private String reference;   // booking ID or membership ID
+    private String reference;   
     private double amount;
     private String status;
     private LocalDate date;

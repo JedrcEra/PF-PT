@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-/** ABSTRACTION: declares what every plan must provide, not how. */
+
 public abstract class Membership {
     public static final String[] TYPES = {"Day Pass", "Monthly", "Premium"};
 

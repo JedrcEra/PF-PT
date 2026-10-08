@@ -1,4 +1,4 @@
-/** ABSTRACTION: base class for every user. INHERITANCE: Player and Staff extend it. */
+
 public abstract class Person {
     private String personId;      // ENCAPSULATION: all fields private
     private String fullName;
